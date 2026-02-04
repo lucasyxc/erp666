@@ -1,0 +1,347 @@
+.inventory-page {
+  padding: 8px 16px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  .inventory-page {
+    padding: 12px 24px 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .inventory-page {
+    max-width: 1400px;
+    padding: 12px 32px 24px;
+  }
+}
+
+.inventory-page-title {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0d4f8b;
+}
+
+@media (min-width: 576px) {
+  .inventory-page-title {
+    margin-bottom: 24px;
+    font-size: 20px;
+  }
+}
+
+.inventory-tabs .ant-tabs-nav {
+  margin-bottom: 16px;
+}
+
+.inventory-tab-content {
+  min-height: 400px;
+}
+
+.inventory-page .form-card {
+  margin-bottom: 0;
+}
+
+/* 与采购价格管理一致的：类别标签 + 下方一体卡片 */
+.inventory-category-connected {
+  border: 1px solid #e8eaed;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.inventory-category-connected .inventory-category-tabs {
+  margin-bottom: 0;
+}
+
+.inventory-category-connected .inventory-category-tabs .ant-tabs-nav {
+  margin-bottom: 0;
+  padding: 0 12px 0 0;
+  background: #fafbfc;
+}
+
+.inventory-category-connected .inventory-category-tabs .ant-tabs-nav::before {
+  border-bottom: 1px solid #e8eaed;
+}
+
+.inventory-category-connected .inventory-category-tabs .ant-tabs-tab {
+  margin-inline: 0 4px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.inventory-category-connected .inventory-category-tabs .ant-tabs-tab .ant-tabs-tab-btn {
+  text-align: center;
+}
+
+.inventory-category-connected .inventory-category-tabs .ant-tabs-tab-active {
+  background: #fff !important;
+  border-color: #e8eaed;
+  border-bottom-color: #fff !important;
+  margin-bottom: -1px;
+  z-index: 1;
+}
+
+.inventory-category-connected .inventory-category-tabs .ant-tabs-content {
+  padding-top: 0;
+}
+
+.inventory-category-connected .inventory-category-tabs .ant-tabs-content-holder {
+  border-top: 1px solid #e8eaed;
+  min-height: 520px;
+}
+
+.inventory-category-connected .inventory-category-tabs .ant-tabs-tabpane {
+  padding: 0;
+  min-height: 520px;
+}
+
+.inventory-category-connected .inventory-category-tabs .ant-tabs-tabpane > div {
+  min-height: 520px;
+}
+
+.inventory-category-connected .inventory-list-card-connected {
+  border-radius: 0 0 8px 8px;
+  border-top: none;
+  box-shadow: none;
+  min-height: 480px;
+}
+
+.inventory-category-connected .inventory-list-card-connected .ant-card-body {
+  padding-top: 16px;
+  min-height: 440px;
+}
+
+/* 统一表格横向宽度，避免切换镜片/镜架等标签时布局跳动 */
+.inventory-category-connected .inventory-product-list-card .ant-table-wrapper {
+  min-width: 1052px;
+}
+
+/* 与采购商品列表表格一致：列间距、字体字号 */
+.inventory-category-connected .inventory-product-list-card .ant-table-cell {
+  padding-left: 14px;
+  padding-right: 14px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+.inventory-category-connected .inventory-product-list-card .ant-table-thead th.ant-table-cell {
+  padding-left: 14px;
+  padding-right: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+}
+
+/* 与采购商品列表卡片标题一致：字号、字重、字体、颜色 */
+.inventory-category-connected .inventory-product-list-card .ant-card-head-title {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  color: inherit;
+}
+
+.inventory-list-title-category {
+  font-size: 16px;
+  font-weight: 600;
+  font-family: inherit;
+  color: #0d4f8b;
+}
+
+.inventory-list-title-suffix {
+  font-size: 16px;
+  font-family: inherit;
+  color: rgba(0, 0, 0, 0.45);
+}
+
+.inventory-empty {
+  color: rgba(0, 0, 0, 0.45);
+  text-align: center;
+  padding: 24px 0;
+}
+
+/* 在库查看 - 镜片按球镜/柱镜网格展示（横坐标柱镜、纵坐标球镜） */
+.inventory-stock-lens-grid-wrap {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  overflow: auto;
+  background: #fff;
+  max-height: 608px;
+}
+
+.inventory-stock-lens-grid {
+  display: flex;
+  flex-direction: column;
+  min-width: fit-content;
+}
+
+.inventory-stock-lens-grid-header {
+  display: grid;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fafafa;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+.inventory-stock-lens-grid-header-cell {
+  padding: 6px 4px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  border-right: 1px solid #e8e8e8;
+  background: #fafafa;
+}
+
+.inventory-stock-lens-grid-header-cell.inventory-stock-lens-grid-first-col {
+  position: sticky;
+  left: 0;
+  z-index: 12;
+  background: #f0f0f0;
+  border-right: 2px solid #e8e8e8;
+  min-width: 96px;
+}
+
+.inventory-stock-lens-grid-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.inventory-stock-lens-grid-row {
+  display: grid;
+  min-height: 32px;
+}
+
+.inventory-stock-lens-grid-label {
+  position: sticky;
+  left: 0;
+  z-index: 9;
+  padding: 4px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  border-right: 2px solid #e8e8e8;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96px;
+}
+
+.inventory-stock-lens-cell {
+  min-height: 32px;
+  border-right: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.inventory-stock-lens-cell-qty {
+  font-weight: 600;
+  color: #0d4f8b;
+}
+
+.inventory-stock-lens-cell-empty {
+  color: #bfbfbf;
+}
+
+/* 库存查看弹窗 - 预警光度标红 */
+.inventory-stock-lens-cell.inventory-stock-lens-cell-alert .inventory-stock-lens-cell-qty,
+.inventory-stock-lens-cell.inventory-stock-lens-cell-alert .inventory-stock-lens-cell-empty {
+  color: #ff4d4f;
+  font-weight: 600;
+}
+
+/* 库存预警设置 - 镜片网格（与镜片采购弹窗演示完全一致，含容器/表头/标签列/单元格底色） */
+.inventory-alert-lens-grid-wrap.inventory-stock-lens-grid-wrap {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  overflow: auto;
+  background: #fff;
+  max-height: 608px;
+}
+.inventory-alert-lens-grid-wrap .inventory-stock-lens-grid-header {
+  background: #fafafa;
+  border-bottom: 2px solid #e8e8e8;
+}
+.inventory-alert-lens-grid-wrap .inventory-stock-lens-grid-header-cell {
+  padding: 4px 2px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  border-right: 1px solid #e8e8e8;
+  background: #fafafa;
+}
+.inventory-alert-lens-grid-wrap .inventory-stock-lens-grid-header-cell.inventory-stock-lens-grid-first-col {
+  background: #f0f0f0;
+  border-right: 2px solid #e8e8e8;
+}
+.inventory-alert-lens-grid-wrap .inventory-stock-lens-grid-row {
+  min-height: 30px;
+}
+.inventory-alert-lens-grid-wrap .inventory-stock-lens-grid-label {
+  padding: 2px 4px;
+  border-right: 2px solid #e8e8e8;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
+}
+.inventory-alert-lens-grid-wrap .inventory-stock-lens-cell {
+  min-height: 30px;
+  padding: 2px;
+  cursor: cell;
+  user-select: none;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+  border-right: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fff;
+  transition: background-color 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+.inventory-alert-lens-grid-wrap .inventory-stock-lens-cell:hover {
+  background: #e6f7ff;
+}
+/* 选中后：与镜片采购一致，浅灰底色 #eee，无蓝框 */
+.inventory-alert-lens-grid-wrap .inventory-stock-lens-cell.inventory-alert-lens-cell-selected {
+  background: #eee;
+  border-right: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.inventory-alert-lens-grid-wrap .inventory-stock-lens-cell.inventory-alert-lens-cell-selected:hover {
+  background: #eee;
+}
+.inventory-alert-lens-grid-wrap .inventory-stock-lens-cell-qty {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: #000;
+  line-height: 1;
+}
+.inventory-alert-lens-grid-wrap .inventory-stock-lens-cell-empty {
+  color: #bfbfbf;
+  font-size: 13px;
+  line-height: 1;
+}
+.inventory-alert-lens-grid-body .inventory-alert-lens-cell {
+  user-select: none;
+}

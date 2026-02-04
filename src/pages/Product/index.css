@@ -1,0 +1,822 @@
+.product-page {
+  padding: 8px 16px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  .product-page { padding: 12px 24px 24px; }
+}
+
+/* 中等大屏（1200-1600px）：增加内容区宽度，更好利用空间 */
+@media (min-width: 1200px) {
+  .product-page {
+    max-width: 1400px;
+    padding: 12px 32px 24px;
+  }
+}
+
+/* 超大屏（≥1600px）：进一步增加宽度 */
+@media (min-width: 1600px) {
+  .product-page {
+    max-width: 1600px;
+  }
+}
+
+.product-page-title {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0d4f8b;
+}
+
+@media (min-width: 576px) {
+  .product-page-title { margin-bottom: 24px; font-size: 20px; }
+}
+
+/* Tabs 响应式：小屏横向滚动，切换时避免字体和容器跳动 */
+.product-page .ant-tabs-nav {
+  margin-bottom: 16px;
+}
+
+.product-page .ant-tabs-nav-wrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.product-page .ant-tabs-nav-list {
+  flex-wrap: nowrap;
+}
+
+.product-page .ant-tabs-tab {
+  white-space: nowrap;
+  /* 标签统一最小宽度（适配「新建商品」「供应商管理」等较长文案），避免切换时左右位移 */
+  min-width: 108px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* 标签字体统一字重与字号，避免激活态加粗或字号差异导致宽度变化、文字跳动 */
+.product-page .ant-tabs-tab .ant-tabs-tab-btn {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* 内容区最小高度，避免切换不同 tab（尤其供应商管理、新建商品）时整体容器高度突变 */
+.product-page .ant-tabs-content,
+.product-page .ant-tabs-content-holder,
+.product-page .ant-tabs-tabpane {
+  min-height: 560px;
+}
+
+.product-page .ant-tabs-tabpane > div {
+  min-height: 560px;
+}
+
+/* 各 tab 内统一使用 product-tab 作为容器，保证最小高度一致 */
+.product-page .product-tab {
+  min-height: 560px;
+}
+
+.product-tab .form-card {
+  border-radius: 8px;
+}
+
+.product-tab .ant-card-head-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.product-tab .ant-table-wrapper {
+  margin-top: 16px;
+  overflow-x: auto;
+}
+
+/* 表格行更紧凑：减少单元格上下内边距 */
+.product-tab .ant-table-thead > tr > th,
+.product-tab .ant-table-tbody > tr > td {
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+/* 全部商品列表 - 价目册侧栏 */
+.price-catalog-side .ant-card-body { padding: 12px; }
+.price-catalog-card .ant-card-head { display: flex; justify-content: center; }
+.price-catalog-card .ant-card-head-title { flex: none; text-align: center; }
+.price-catalog-btn-row {
+  width: 100%;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+.price-catalog-btn-row .ant-btn { width: 100%; height: 36px; line-height: 34px; padding: 0; }
+.price-catalog-item {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  height: 36px;
+  min-height: 36px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+}
+.price-catalog-item:hover { background: rgba(13, 79, 139, 0.06); }
+.price-catalog-item.active { background: rgba(13, 79, 139, 0.1); color: #0d4f8b; font-weight: 500; }
+.price-catalog-item-all { justify-content: center; }
+.price-catalog-index { flex-shrink: 0; margin-inline-end: 6px; color: inherit; }
+.price-catalog-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.price-catalog-item .ant-btn-link.p-0 { padding: 0; height: auto; }
+
+/* 表格分页居中：商品页内所有表格 + 新建价目册弹窗 */
+.product-tab .ant-table-pagination,
+.new-catalog-modal .ant-table-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 12px;
+}
+
+/* 中等大屏及以上：优化表格显示 */
+@media (min-width: 1200px) {
+  /* 表格列宽自动分配，充分利用空间 */
+  .product-tab .ant-table {
+    table-layout: auto;
+  }
+  
+  /* 表格列标题和内容自动换行，避免过窄 */
+  .product-tab .ant-table th,
+  .product-tab .ant-table td {
+    white-space: normal;
+    word-break: break-word;
+  }
+}
+
+/* 去掉 number 输入框的上下箭头（如有效期） */
+.product-page .input-no-spinner input[type="number"]::-webkit-inner-spin-button,
+.product-page .input-no-spinner input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.product-page .input-no-spinner input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* 表单通用 */
+.product-form {
+  margin-bottom: 24px;
+}
+
+/* 统一表单字段的行间距 */
+.product-form .ant-form-item {
+  margin-bottom: 16px;
+}
+
+.product-form .ant-form-item:last-child {
+  margin-bottom: 0;
+}
+
+/* 同一行内的字段间距 */
+.product-form .ant-space-item {
+  margin-right: 0;
+}
+
+.product-form.ant-form-inline .ant-form-item {
+  margin-right: 16px;
+  margin-bottom: 16px;
+}
+
+@media (max-width: 575.98px) {
+  .product-form.ant-form-inline .ant-form-item {
+    margin-right: 0;
+    margin-bottom: 16px;
+  }
+  
+  /* 小屏时确保行间距 */
+  .product-form .ant-form-item {
+    margin-bottom: 16px;
+  }
+}
+
+/* 输入框、下拉框：小屏 100% 宽，大屏固定 max-width */
+.input-brand,
+.input-series,
+.input-w160,
+.input-w200,
+.input-w280,
+.input-w300,
+.input-w400 {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* 确保 input-w400 宽度正确应用 */
+.input-w400 {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* 统一所有下拉选择框的尺寸 */
+.select-w180,
+.select-w200 {
+  width: 100% !important;
+  max-width: 100%;
+}
+
+/* 统一所有下拉框宽度，包括多选模式和自动完成 */
+.product-form .ant-select,
+.product-form .ant-select-selector,
+.product-form .ant-select-multiple .ant-select-selector,
+.product-form .ant-select-auto-complete,
+.product-form .ant-auto-complete {
+  width: 100% !important;
+  max-width: 100%;
+  min-width: 0;
+}
+
+/* 调整功能字段的标签显示样式，使其更接近其他字段（AutoComplete）的文本显示 */
+.product-form .ant-select-selection-overflow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.product-form .ant-select-selection-overflow-item {
+  flex: none;
+}
+
+/* 使标签样式更接近普通文本输入框 */
+.product-form .ant-select-selection-item {
+  margin: 0;
+  padding: 0 4px 0 0;
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0;
+  font-size: 14px;
+  line-height: 22px;
+  height: auto;
+  color: rgba(0, 0, 0, 0.88);
+}
+
+.product-form .ant-select-selection-item-content {
+  margin-right: 4px;
+}
+
+/* 隐藏删除按钮 */
+.product-form .ant-select-selection-item-remove {
+  display: none !important;
+}
+
+/* 选中项之间用逗号分隔，更像文本显示 */
+.product-form .ant-select-selection-item:not(:last-child)::after {
+  content: '、';
+  color: rgba(0, 0, 0, 0.88);
+  margin: 0 2px;
+}
+
+/* 去掉功能字段下拉选项的背景颜色 */
+.product-form .ant-select-dropdown .ant-select-item-option-selected:not(.ant-select-item-option-disabled) {
+  background-color: transparent !important;
+}
+
+.product-form .ant-select-dropdown .ant-select-item-option:hover {
+  background-color: #f5f5f5 !important;
+}
+
+.product-form .ant-select-dropdown .ant-select-item-option-active {
+  background-color: #f5f5f5 !important;
+}
+
+@media (min-width: 576px) {
+  .input-brand { max-width: 200px; }
+  .input-series { max-width: 160px; }
+  .input-w160 { max-width: 160px; }
+  .input-w200 { max-width: 200px; }
+  .input-w280 { max-width: 280px; }
+  .input-w300 { max-width: 300px; }
+  .input-w400 { 
+    max-width: 400px !important;
+    width: 400px !important;
+  }
+  /* 统一所有下拉框宽度为200px，与功能下拉框一致 */
+  .select-w180,
+  .select-w200 {
+    max-width: 200px;
+  }
+  .product-form .ant-select,
+  .product-form .ant-select-selector,
+  .product-form .ant-select-multiple .ant-select-selector,
+  .product-form .ant-auto-complete,
+  .product-form .ant-auto-complete .ant-select-selector {
+    max-width: 200px !important;
+    width: 200px !important;
+  }
+}
+
+/* 中等大屏：适当增加输入框宽度，让表单更舒适 */
+@media (min-width: 1200px) {
+  .input-w200 { max-width: 220px; }
+  .input-w280 { max-width: 320px; }
+  .input-w300 { max-width: 350px; }
+  .input-w400 { 
+    max-width: 450px !important;
+    width: 450px !important;
+  }
+  /* 统一所有下拉框宽度为220px，与功能下拉框一致 */
+  .select-w180,
+  .select-w200 {
+    max-width: 220px;
+  }
+  .product-form .ant-select,
+  .product-form .ant-select-selector,
+  .product-form .ant-select-multiple .ant-select-selector,
+  .product-form .ant-auto-complete,
+  .product-form .ant-auto-complete .ant-select-selector {
+    max-width: 220px !important;
+    width: 220px !important;
+  }
+}
+
+/* inline 表单下输入框宽度（大屏） */
+.product-form-brand.ant-form-inline .input-brand,
+.product-form-series.ant-form-inline .input-series {
+  width: 100%;
+}
+
+/* 品牌管理：出现校验提示时保持文本框与按钮对齐，不错位 */
+.product-form-brand.ant-form-inline {
+  align-items: flex-start;
+  flex-wrap: nowrap;
+}
+.product-form-brand.ant-form-inline .ant-form-item-explain-error {
+  margin-top: 2px;
+  line-height: 1.4;
+}
+
+@media (min-width: 576px) {
+  .product-form-brand.ant-form-inline .input-brand {
+    width: 200px;
+    max-width: 200px;
+  }
+  .product-form-series.ant-form-inline .input-series {
+    width: 160px;
+    max-width: 160px;
+  }
+  .product-form-series.ant-form-inline .select-w180 {
+    width: 180px !important;
+    max-width: 180px;
+  }
+}
+
+/* 生产厂家和供应商表单的间距优化 */
+.product-form-manufacturer .ant-space,
+.product-form-supplier .ant-space {
+  margin-bottom: 0;
+}
+
+.product-form-manufacturer .ant-form-item,
+.product-form-supplier .ant-form-item {
+  margin-bottom: 0;
+}
+
+/* 供应商：校验提示另起一行，隐藏表单项内默认错误避免错位 */
+.product-form-supplier .supplier-form-name-item .ant-form-item-explain {
+  display: none;
+}
+
+/* 生产厂家：校验提示另起一行，隐藏表单项内默认错误避免错位 */
+.product-form-manufacturer .manufacturer-form-name-item .ant-form-item-explain {
+  display: none;
+}
+
+/* 确保添加按钮与文本框行底对齐（错误提示已另起一行，表单项高度一致） */
+.product-form-manufacturer .ant-space,
+.product-form-supplier .ant-space {
+  align-items: flex-end;
+}
+
+/* 新建商品表单的间距优化 */
+.product-form-product .ant-form-item {
+  margin-bottom: 0;
+}
+
+/* 统一所有行之间的间距 - 平均行高 */
+.product-form-product .ant-space {
+  margin-bottom: 20px;
+}
+
+/* 最后一行不需要下边距 */
+.product-form-product .ant-space:last-of-type {
+  margin-bottom: 0;
+}
+
+/* 确保 Space 内的字段有合适的列间距 */
+.product-form-product .ant-space-item {
+  display: inline-flex;
+}
+
+/* 统一标签高度和行高 - 与供应商表单一致 */
+.product-form-product .ant-form-item-label {
+  margin-bottom: 0;
+}
+
+.product-form-product .ant-form-item-label > label {
+  margin-bottom: 0;
+}
+
+/* 统一输入框高度 - 使用默认值，与供应商表单一致 */
+.product-form-product .ant-input,
+.product-form-product .ant-select-selector,
+.product-form-product .ant-select,
+.product-form-product .ant-auto-complete {
+  /* 使用 Ant Design 默认高度 32px */
+}
+
+/* 统一每行的总高度 - 与供应商表单一致 */
+.product-form-product .ant-form-item {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 确保商品名称输入框宽度正确显示 */
+.product-form-product .input-w400,
+.product-form-product .input-w400 input {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+/* 禁用商品名称输入框的验证错误样式 */
+.product-form-product .ant-form-item-has-error .input-w400,
+.product-form-product .ant-form-item-has-error .input-w400 input,
+.product-form-product .ant-form-item-has-error .input-w400:hover,
+.product-form-product .ant-form-item-has-error .input-w400:focus {
+  border-color: #d9d9d9 !important;
+  box-shadow: none !important;
+}
+
+.product-form-product .ant-form-item-has-error .ant-form-item-explain-error {
+  display: none !important;
+}
+
+@media (min-width: 576px) {
+  .product-form-product .input-w400,
+  .product-form-product .input-w400 input {
+    max-width: 400px !important;
+    width: 400px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .product-form-product .input-w400,
+  .product-form-product .input-w400 input {
+    max-width: 450px !important;
+    width: 450px !important;
+  }
+}
+
+/* 类别卡片网格 */
+.category-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+  padding: 16px 0;
+}
+
+@media (max-width: 575.98px) {
+  .category-cards {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 12px;
+  }
+}
+
+.category-card {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: 2px solid #e8e8e8;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.category-card:hover {
+  border-color: #0d4f8b;
+  box-shadow: 0 4px 12px rgba(13, 79, 139, 0.15);
+  transform: translateY(-2px);
+}
+
+.category-card-content {
+  padding: 20px;
+}
+
+.category-card-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #333;
+}
+
+/* 返回按钮样式优化 */
+.back-button {
+  padding: 4px 16px;
+  height: 32px;
+  font-size: 14px;
+  color: #0d4f8b;
+  background-color: #f0f7ff;
+  border: 1px solid #91caff;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.back-button:hover {
+  color: #1890ff;
+  background-color: #e6f4ff;
+  border-color: #69b7ff;
+}
+
+.back-button:active {
+  color: #0050b3;
+  background-color: #bae0ff;
+  border-color: #40a9ff;
+}
+
+/* 去掉数字输入框的上下箭头 */
+.product-form input[type="number"]::-webkit-inner-spin-button,
+.product-form input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.product-form input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* 添加按钮闪烁提示 */
+.add-button-hint {
+  animation: buttonBlink 1s ease-in-out infinite;
+}
+
+@keyframes buttonBlink {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(24, 144, 255, 0.7);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(24, 144, 255, 0);
+  }
+}
+
+/* 光度范围表格样式 - 使用原生 Grid 布局，性能更优 */
+.power-range-table-container {
+  width: fit-content;
+  overflow: hidden;
+}
+
+.power-range-grid {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  border: 1px solid #d9d9d9;
+  background: #fff;
+}
+
+/* 表头 */
+.power-range-grid-header {
+  display: grid;
+  grid-template-columns: 70px repeat(25, 42px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fafafa;
+  border-bottom: 2px solid #d9d9d9;
+}
+
+.power-range-header-cell {
+  padding: 6px 4px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  border-right: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  background: #fafafa;
+}
+
+.power-range-header-cell.power-range-first-col {
+  position: sticky;
+  left: 0;
+  z-index: 12;
+  background: #f0f0f0;
+  border-right: 2px solid #d9d9d9;
+}
+
+/* 表格主体 - 可滚动 */
+.power-range-grid-body {
+  display: flex;
+  flex-direction: column;
+  max-height: 600px;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+/* 表格行 */
+.power-range-grid-row {
+  display: grid;
+  grid-template-columns: 70px repeat(25, 42px);
+  min-height: 24px;
+}
+
+/* 单元格 */
+.power-range-cell {
+  padding: 2px 4px;
+  text-align: center;
+  font-size: 13px;
+  border-right: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.power-range-cell.power-range-first-col {
+  position: sticky;
+  left: 0;
+  z-index: 9;
+  background: #fafafa;
+  font-weight: 500;
+  border-right: 2px solid #d9d9d9;
+}
+
+/* 可选择的单元格 */
+.power-range-cell-item {
+  min-height: 24px;
+  cursor: cell;
+  user-select: none;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+  border-right: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  background: #fff;
+  transition: background-color 0.1s;
+}
+
+.power-range-cell-item.selected {
+  background-color: #1890ff !important;
+}
+
+.power-range-cell-item:hover {
+  background-color: #e6f7ff;
+}
+
+.power-range-cell-item.selected:hover {
+  background-color: #40a9ff !important;
+}
+
+.power-range-table {
+  width: 100%;
+}
+
+/* 表头固定（柱镜行） */
+.power-range-table .ant-table-thead > tr > th {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fafafa !important;
+  font-weight: 600;
+  border-bottom: 2px solid #d9d9d9;
+}
+
+/* 第一列（球镜列）表头固定 */
+.power-range-table .ant-table-thead > tr > th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 12;
+  background: #f0f0f0 !important;
+  border-right: 2px solid #d9d9d9;
+}
+
+/* 第一列（球镜列）数据行固定 */
+.power-range-table .ant-table-tbody > tr > td:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 9;
+  background: #fafafa !important;
+  font-weight: 500;
+  border-right: 2px solid #d9d9d9;
+}
+
+/* 第一列表头和数据行同时固定时的样式 */
+.power-range-table .ant-table-thead > tr > th.power-range-first-col {
+  position: sticky;
+  left: 0;
+  top: 0;
+  z-index: 12;
+  background: #f0f0f0 !important;
+  border-right: 2px solid #d9d9d9;
+}
+
+.power-range-table .ant-table-tbody > tr:hover > td:first-child {
+  background: #e6f7ff !important;
+}
+
+/* 单元格选择样式 */
+.power-range-cell {
+  width: 100%;
+  height: 100%;
+  min-height: 24px;
+  cursor: cell;
+  user-select: none;
+}
+
+.power-range-cell.selected {
+  background-color: #1890ff !important;
+  color: #fff;
+}
+
+.power-range-table .ant-table-tbody > tr > td:not(:first-child) {
+  padding: 0;
+  position: relative;
+}
+
+/* 优化表格渲染性能 */
+.power-range-table .ant-table-tbody > tr {
+  will-change: auto;
+}
+
+/* 禁用表格行的默认悬停效果，避免干扰选择 */
+.power-range-table .ant-table-tbody > tr > td:not(:first-child):hover {
+  background: transparent !important;
+}
+
+/* 单元格选择样式优化 */
+.power-range-cell {
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: auto;
+}
+
+.power-range-table .ant-table-tbody > tr > td {
+  padding: 2px 4px;
+  min-height: 24px;
+  background: #fff;
+  font-size: 13px;
+}
+
+.power-range-table .ant-table-thead > tr > th {
+  padding: 6px 4px;
+  font-size: 13px;
+}
+
+.power-range-table .ant-table-tbody > tr:hover > td {
+  background: #f5f5f5;
+}
+
+.power-range-table .ant-table-tbody > tr:hover > td:first-child {
+  background: #e6f7ff !important;
+}
+
+/* 单元格选择样式 */
+.power-range-cell {
+  width: 100%;
+  height: 100%;
+  min-height: 24px;
+  cursor: cell;
+  user-select: none;
+}
+
+.power-range-cell.selected {
+  background-color: #1890ff !important;
+  color: #fff;
+}
+
+.power-range-table .ant-table-tbody > tr > td:not(:first-child) {
+  padding: 0;
+  position: relative;
+}
+
+/* 优化表格渲染性能 */
+.power-range-table .ant-table-tbody > tr {
+  will-change: auto;
+}
+
+/* 禁用表格行的默认悬停效果，避免干扰选择 */
+.power-range-table .ant-table-tbody > tr > td:not(:first-child):hover {
+  background: transparent !important;
+}
+
+/* 单元格选择样式优化 */
+.power-range-cell {
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+  pointer-events: auto;
+}

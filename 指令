@@ -1,0 +1,32 @@
+前端：npm run dev
+后端：
+cd backend
+venv\Scripts\activate
+python manage.py runserver 8001
+
+-------- 交互式脚本（推荐）--------
+cd backend
+venv\Scripts\activate
+python manage.py erp_interact
+
+连接服务器：
+cd D:\ERPXY\backend
+.\scripts\connect-server.ps1
+密码：
+7mA](acL9MjV$
+
+
+部署后端：
+cd D:\ERPXY\backend
+venv\Scripts\activate
+.\scripts\deploy.ps1
+
+部署前端：
+cd D:\ERPXY
+.\scripts\deploy-frontend.ps1
+
+
+删除某机构全部客户：
+cd D:\ERPXY\backend
+venv\Scripts\activate
+python manage.py delete_org_customers

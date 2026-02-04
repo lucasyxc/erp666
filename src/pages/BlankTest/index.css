@@ -1,0 +1,26 @@
+.blank-test-page {
+  padding: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  .blank-test-page { padding: 24px; }
+}
+
+.blank-test-title {
+  margin: 0 0 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0d4f8b;
+}
+
+@media (min-width: 576px) {
+  .blank-test-title { font-size: 20px; margin-bottom: 16px; }
+}
+
+.blank-test-desc {
+  margin: 0;
+  font-size: 14px;
+  color: #666;
+}

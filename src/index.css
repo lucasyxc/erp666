@@ -1,0 +1,74 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  color: #333;
+  background: #f5f7fa;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* 响应式断点：xs <576px | sm 576–767 | md 768+ */
+@media (max-width: 575.98px) {
+  html { font-size: 14px; }
+}
+
+/* 禁用浏览器自动补全提示 */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+/* 隐藏浏览器自动补全下拉列表 */
+input::-webkit-contacts-auto-fill-button,
+input::-webkit-credentials-auto-fill-button {
+  visibility: hidden;
+  display: none !important;
+  pointer-events: none;
+  height: 0;
+  width: 0;
+  margin: 0;
+}
+
+/* 禁用所有输入框的自动补全 */
+input,
+textarea,
+select {
+  autocomplete: off;
+  -webkit-autocomplete: off;
+}
+
+/* 隐藏 datalist 下拉提示 */
+datalist {
+  display: none !important;
+}
+
+/* 表格翻页组件整体居中（覆盖 Ant Design 默认右对齐） */
+.ant-table-pagination {
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 12px;
+}
+
+/* 消息提示整体下移，便于看到（如：请关联供应商） */
+.ant-message {
+  top: 72px !important;
+}

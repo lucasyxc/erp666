@@ -1,0 +1,419 @@
+.sales-page {
+  padding: 8px 16px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  .sales-page {
+    padding: 12px 24px 24px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .sales-page {
+    max-width: 1400px;
+    padding: 12px 32px 24px;
+  }
+}
+
+.sales-page-title {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0d4f8b;
+}
+
+@media (min-width: 576px) {
+  .sales-page-title {
+    margin-bottom: 24px;
+    font-size: 20px;
+  }
+}
+
+.sales-page .ant-tabs-nav {
+  margin-bottom: 16px;
+}
+
+.sales-tab-blank {
+  padding: 48px 24px;
+  text-align: center;
+  color: #999;
+  background: #fafafa;
+  border-radius: 8px;
+  min-height: 200px;
+}
+
+/* 新建销售 - 客户行 */
+.sales-new-sale-card .sales-customer-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sales-customer-label {
+  flex-shrink: 0;
+  line-height: 32px;
+  color: #262626;
+  font-weight: 500;
+}
+
+.sales-customer-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  flex: 1;
+  min-width: 0;
+}
+
+.sales-customer-input {
+  width: 260px;
+  min-width: 200px;
+}
+
+.sales-option-phone {
+  color: #8c8c8c;
+  font-size: 12px;
+}
+
+.sales-option-local-tag {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 0 4px;
+  font-size: 11px;
+  color: #52c41a;
+  background: #f6ffed;
+  border-radius: 2px;
+}
+
+.sales-option-external-tag {
+  display: inline-block;
+  margin-right: 6px;
+  padding: 0 4px;
+  font-size: 11px;
+  color: #1890ff;
+  background: #e6f7ff;
+  border-radius: 2px;
+}
+
+.sales-option-loading {
+  color: #8c8c8c;
+  font-size: 12px;
+}
+
+.sales-new-customer-btn {
+  flex-shrink: 0;
+}
+
+.sales-customer-selected-hint {
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+  border-radius: 6px;
+  color: #389e0d;
+  font-size: 13px;
+}
+
+/* 添加商品、商品检索、商品显示框 */
+.sales-product-section {
+  margin-top: 24px;
+}
+
+.sales-product-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.sales-product-label {
+  flex-shrink: 0;
+  line-height: 32px;
+  color: #262626;
+  font-weight: 500;
+}
+
+.sales-product-search-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  flex: 1;
+  min-width: 0;
+}
+
+.sales-product-search {
+  width: 560px;
+  min-width: 420px;
+  max-width: 100%;
+}
+
+.sales-product-table-wrap {
+  margin-top: 12px;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.sales-product-table-wrap .ant-table-wrapper {
+  margin: 0;
+}
+
+.sales-order-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.sales-order-total {
+  font-size: 14px;
+  color: #262626;
+}
+
+.sales-order-total strong {
+  color: #0d4f8b;
+  font-size: 16px;
+}
+
+.sales-item-input-num {
+  width: 100%;
+  min-width: 72px;
+}
+
+/* 数量列输入框：缩短宽度 */
+.sales-item-quantity-input {
+  min-width: 48px;
+  max-width: 56px;
+}
+
+.sales-item-price-input {
+  max-width: 100px;
+}
+
+.sales-item-discount-select {
+  max-width: 88px;
+}
+
+.sales-item-discount-readonly {
+  color: #262626;
+}
+
+.sales-item-spec-input {
+  width: 100%;
+  min-width: 140px;
+  box-sizing: border-box;
+}
+
+/* 镜片在库：商品参数文本框有库存显示绿色 */
+.sales-item-spec-in-stock input,
+.sales-item-spec-in-stock .ant-select-selection-search-input {
+  color: #52c41a !important;
+}
+
+/* 镜片在库：商品参数文本框无库存显示红色 */
+.sales-item-spec-out-of-stock input,
+.sales-item-spec-out-of-stock .ant-select-selection-search-input {
+  color: #ff4d4f !important;
+}
+
+/* 镜片含下加光或棱镜：视为定制，商品参数显示红色 */
+.sales-item-spec-custom input,
+.sales-item-spec-custom .ant-select-selection-search-input {
+  color: #ff4d4f !important;
+}
+
+/* 验光数据表格 */
+.sales-refraction-section {
+  margin-top: 24px;
+}
+
+.sales-refraction-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+
+.sales-refraction-title {
+  margin: 0;
+  font-weight: 600;
+  color: #262626;
+  font-size: 14px;
+}
+
+.sales-refraction-table-wrap {
+  overflow-x: auto;
+  border: 1px solid #f0f0f0;
+  border-radius: 6px;
+}
+
+.sales-pd-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+  flex-wrap: wrap;
+}
+
+.sales-pd-label {
+  font-size: 13px;
+  font-weight: 500;
+  color: #262626;
+  flex-shrink: 0;
+}
+
+.sales-pd-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.sales-pd-input {
+  width: 72px;
+  text-align: center;
+}
+
+.sales-pd-unit {
+  font-size: 12px;
+  color: #8c8c8c;
+}
+
+/* 右眼/左眼瞳距输入框尺寸 */
+.sales-pd-cell-input {
+  min-width: 56px;
+  max-width: 80px;
+  text-align: center;
+}
+
+.sales-refraction-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.sales-refraction-table th,
+.sales-refraction-table td {
+  padding: 8px 10px;
+  border: 1px solid #f0f0f0;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.sales-refraction-table thead th {
+  background: #fafafa;
+  font-weight: 500;
+  color: #262626;
+}
+
+.sales-refraction-subhead th {
+  font-weight: 400;
+  font-size: 12px;
+  color: #8c8c8c;
+}
+
+.sales-refraction-th-eye,
+.sales-refraction-td-eye {
+  min-width: 56px;
+  background: #fafafa;
+  font-weight: 500;
+}
+
+.sales-refraction-cell {
+  position: relative;
+}
+
+.sales-refraction-hint {
+  position: absolute;
+  left: 16px;
+  bottom: 100%;
+  margin-bottom: 2px;
+  font-size: 12px;
+  color: #ff4d4f;
+  line-height: 1.2;
+  white-space: nowrap;
+  pointer-events: none;
+}
+
+.sales-refraction-input {
+  width: 100%;
+  min-width: 64px;
+  max-width: 100px;
+  text-align: center;
+}
+
+.sales-refraction-select {
+  min-width: 72px;
+  width: 100%;
+  max-width: 90px;
+}
+
+/* 矫正视力：输入 1.0 后 + 和数字直接以右上标显示，输入框文字透明、光标可见 */
+.sales-corrected-va-single {
+  position: relative;
+}
+
+.sales-corrected-va-single .sales-refraction-input {
+  min-width: 64px;
+  color: transparent;
+  caret-color: rgba(0, 0, 0, 0.88);
+}
+
+.sales-corrected-va-overlay {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 4px 11px;
+  line-height: 22px;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.88);
+  pointer-events: none;
+  white-space: nowrap;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+}
+
+.sales-corrected-va-overlay .sales-corrected-va-main-text {
+  flex-shrink: 0;
+}
+
+/* 右上标：符号和数字整体在右上方显示，避免被当成下标 */
+.sales-corrected-va-overlay sup {
+  font-size: 0.7em;
+  vertical-align: super;
+  line-height: 0;
+  margin-left: 3px;
+  display: inline-block;
+  transform: translateY(-0.35em);
+}
+
+/* 客户列表 - 检索框 */
+.sales-customer-list-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.sales-customer-list-search {
+  width: 280px;
+  min-width: 200px;
+}
+
+/* 导入验光弹窗 - 患者管理系统检查列表：右/左眼概览（球镜/柱镜/轴位 · 矫正视力上标） */
+.sales-external-eye-summary {
+  font-size: 12px;
+}
+.sales-external-eye-summary sup {
+  font-size: 0.85em;
+  margin-left: 0;
+}

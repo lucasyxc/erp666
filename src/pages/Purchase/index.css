@@ -1,0 +1,439 @@
+.purchase-page {
+  padding: 8px 16px 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+@media (min-width: 576px) {
+  .purchase-page { padding: 12px 24px 24px; }
+}
+
+@media (min-width: 1200px) {
+  .purchase-page {
+    max-width: 1400px;
+    padding: 12px 32px 24px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .purchase-page {
+    max-width: 1600px;
+  }
+}
+
+.purchase-page-title {
+  margin-bottom: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #0d4f8b;
+}
+
+@media (min-width: 576px) {
+  .purchase-page-title { margin-bottom: 24px; font-size: 20px; }
+}
+
+.purchase-page .ant-tabs-nav {
+  margin-bottom: 16px;
+}
+
+.purchase-page .ant-tabs-nav-wrap {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+}
+
+.purchase-page .ant-tabs-nav-list {
+  flex-wrap: nowrap;
+}
+
+.purchase-page .ant-tabs-tab {
+  white-space: nowrap;
+  min-width: 108px;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.purchase-page .ant-tabs-tab .ant-tabs-tab-btn {
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.purchase-page .ant-tabs-content,
+.purchase-page .ant-tabs-content-holder,
+.purchase-page .ant-tabs-tabpane {
+  min-height: 560px;
+}
+
+.purchase-page .ant-tabs-tabpane > div {
+  min-height: 560px;
+}
+
+.purchase-page .purchase-tab {
+  min-height: 560px;
+}
+
+.purchase-page .form-card {
+  margin-bottom: 0;
+}
+
+/* 采购价格管理 - 子标签与对应商品列表相连展示 */
+.purchase-category-connected {
+  border: 1px solid #e8eaed;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.purchase-category-connected .purchase-category-tabs {
+  margin-bottom: 0;
+}
+
+.purchase-category-connected .purchase-category-tabs .ant-tabs-nav {
+  margin-bottom: 0;
+  padding: 0 12px 0 0;
+  background: #fafbfc;
+}
+
+.purchase-category-connected .purchase-category-tabs .ant-tabs-nav::before {
+  border-bottom: 1px solid #e8eaed;
+}
+
+.purchase-category-connected .purchase-category-tabs .ant-tabs-tab {
+  margin-inline: 0 4px;
+  padding: 10px 16px;
+  border: 1px solid transparent;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  background: transparent;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.purchase-category-connected .purchase-category-tabs .ant-tabs-tab .ant-tabs-tab-btn {
+  text-align: center;
+}
+
+.purchase-category-connected .purchase-category-tabs .ant-tabs-tab-active {
+  background: #fff !important;
+  border-color: #e8eaed;
+  border-bottom-color: #fff !important;
+  margin-bottom: -1px;
+  z-index: 1;
+}
+
+.purchase-category-connected .purchase-category-tabs .ant-tabs-content {
+  padding-top: 0;
+}
+
+.purchase-category-connected .purchase-category-tabs .ant-tabs-content-holder {
+  border-top: 1px solid #e8eaed;
+}
+
+.purchase-category-connected .purchase-category-tabs .ant-tabs-tabpane {
+  padding: 0;
+}
+
+/* 当前选中的类别标签与下方卡片视觉一体：去掉卡片顶圆角与上边距 */
+.purchase-category-connected .purchase-list-card-connected {
+  border-radius: 0 0 8px 8px;
+  border-top: none;
+  box-shadow: none;
+}
+
+.purchase-category-connected .purchase-list-card-connected .ant-card-body {
+  padding-top: 16px;
+}
+
+/* 采购价格管理表格：列之间留足间距 */
+.purchase-category-connected .purchase-product-list-card .ant-table-cell {
+  padding-left: 14px;
+  padding-right: 14px;
+}
+.purchase-category-connected .purchase-product-list-card .ant-table-thead th.ant-table-cell {
+  padding-left: 14px;
+  padding-right: 14px;
+}
+
+/* 采购价格列内边距 */
+.purchase-price-col-offset {
+  padding-left: 4px;
+}
+
+/* 采购价格表头：排序箭头紧贴文字右侧 */
+.purchase-page .ant-table-thead th.purchase-price-header-col .ant-table-column-sorters {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  justify-content: center;
+}
+.purchase-page .ant-table-thead th.purchase-price-header-col .purchase-price-header-title {
+  margin-left: 0;
+}
+
+/* 采购价格、保存等左移列：表头悬停时右侧空白不出现底色（各类别表格通用） */
+.purchase-page .ant-table-thead th.purchase-price-header-col:hover {
+  background: transparent !important;
+}
+.purchase-page .ant-table-thead th.purchase-price-header-col.ant-table-column-sort:hover {
+  background: #fafafa !important;
+}
+.purchase-page .ant-table-thead th.purchase-save-header-col:hover {
+  background: transparent !important;
+}
+
+/* 保存列内边距 */
+.purchase-save-col-offset {
+  padding-left: 4px;
+}
+
+/* 取消排序列的默认灰色背景（表头、表体），仅保留排序箭头提示 */
+.purchase-page .ant-table-thead th.ant-table-column-sort {
+  background: #fafafa !important;
+}
+.purchase-page .ant-table-tbody td.ant-table-column-sort {
+  background: #fff !important;
+}
+.purchase-page .ant-table-tbody tr:hover td.ant-table-column-sort {
+  background: #fafafa !important;
+}
+
+/* 采购管理表格翻页组件居中 */
+.purchase-page .ant-table-pagination {
+  display: flex !important;
+  justify-content: center !important;
+  margin-top: 12px;
+  width: 100%;
+}
+
+/* 镜片采购弹窗 - 光度表格（横坐标柱镜、纵坐标球镜，仅显示在范围内的行列） */
+.purchase-lens-table-wrap {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  overflow: auto;
+  background: #fff;
+  max-height: 400px;
+}
+
+.purchase-lens-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.purchase-lens-th {
+  padding: 8px 10px;
+  text-align: center;
+  font-weight: 600;
+  color: #262626;
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+}
+
+.purchase-lens-th-corner {
+  min-width: 96px; /* 适应“球镜/柱镜”字体宽度 */
+  background: #f5f5f5;
+}
+
+.purchase-lens-th-cyl {
+  min-width: 56px;
+  font-variant-numeric: tabular-nums;
+}
+
+.purchase-lens-td {
+  padding: 6px 8px;
+  border: 1px solid #f0f0f0;
+  vertical-align: middle;
+  text-align: center;
+}
+
+.purchase-lens-table th:nth-child(even),
+.purchase-lens-table td:nth-child(even) {
+  background: #f0f9f0;
+}
+
+.purchase-lens-td-label {
+  font-variant-numeric: tabular-nums;
+  background: #fafafa;
+  font-weight: 500;
+  min-width: 96px; /* 与表头第一列一致，适应“球镜/柱镜” */
+}
+
+.purchase-lens-table th:nth-child(odd),
+.purchase-lens-table td:nth-child(odd) {
+  background: #fff;
+}
+
+.purchase-lens-table th.purchase-lens-th-corner,
+.purchase-lens-table td.purchase-lens-td-label {
+  background: #f5f5f5;
+}
+
+.purchase-lens-td-cell {
+  min-width: 56px;
+}
+
+.purchase-lens-td-has-input .purchase-lens-inp {
+  width: 100%;
+  max-width: 70px;
+}
+
+.purchase-lens-table tbody tr:hover td:nth-child(odd) {
+  background: #fafafa !important;
+}
+
+.purchase-lens-table tbody tr:hover td:nth-child(even) {
+  background: #e6f7ed !important;
+}
+
+.purchase-lens-table tbody tr:hover td.purchase-lens-td-label {
+  background: #e8e8e8 !important;
+}
+
+.purchase-lens-inp .ant-input-number-input {
+  font-size: 12px;
+}
+
+/* 镜片采购弹窗 - 拖拽多选网格（与库存预警弹窗一致：宽 950、网格区高 608） */
+.purchase-lens-grid-wrap {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  overflow: auto;
+  background: #fff;
+  max-height: 608px;
+}
+
+.purchase-lens-grid {
+  display: flex;
+  flex-direction: column;
+  min-width: fit-content;
+}
+
+.purchase-lens-grid-header {
+  display: grid;
+  grid-template-columns: 96px repeat(25, 46px);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #fafafa;
+  border-bottom: 2px solid #e8e8e8;
+}
+
+.purchase-lens-grid-header-cell {
+  padding: 4px 2px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  border-right: 1px solid #e8e8e8;
+  background: #fafafa;
+}
+
+.purchase-lens-grid-header-cell.purchase-lens-grid-first-col {
+  position: sticky;
+  left: 0;
+  z-index: 12;
+  background: #f0f0f0;
+  border-right: 2px solid #e8e8e8;
+  min-width: 96px;
+}
+
+.purchase-lens-grid-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.purchase-lens-grid-row {
+  display: grid;
+  grid-template-columns: 96px repeat(25, 46px);
+  min-height: 30px;
+}
+
+.purchase-lens-grid-label {
+  position: sticky;
+  left: 0;
+  z-index: 9;
+  padding: 2px 4px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+  border-right: 2px solid #e8e8e8;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fafafa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 96px;
+}
+
+.purchase-lens-cell-item {
+  min-height: 30px;
+  cursor: cell;
+  user-select: none;
+  touch-action: none;
+  -webkit-tap-highlight-color: transparent;
+  border-right: 1px solid #f0f0f0;
+  border-bottom: 1px solid #f0f0f0;
+  background: #fff;
+  transition: background-color 0.1s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+.purchase-lens-cell-item:hover {
+  background: #e6f7ff;
+}
+
+/* 选中后：白底黑字显示数量 */
+.purchase-lens-cell-item.selected {
+  background: #fff;
+}
+
+.purchase-lens-cell-item.selected:hover {
+  background: #fff;
+}
+
+.purchase-lens-cell-qty {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  color: #000;
+  line-height: 1;
+}
+
+/* 不在设置的光度范围内的单元格：不可选，背景加深 */
+.purchase-lens-cell-item.purchase-lens-cell-out-of-range {
+  background: #e8e8e8;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.purchase-lens-cell-item.purchase-lens-cell-out-of-range:hover {
+  background: #e8e8e8;
+}
+
+.purchase-lens-cell-inp {
+  width: 100%;
+  max-width: 56px;
+  font-size: 12px;
+}
+
+.purchase-lens-cell-inp .ant-input-number-input {
+  font-size: 12px;
+}
+
+/* 未关联供应商时点击采购：关联供应商按钮闪烁 */
+@keyframes purchase-link-supplier-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.purchase-page .purchase-link-supplier-blink {
+  animation: purchase-link-supplier-blink 0.6s ease-in-out infinite;
+}
